@@ -1,0 +1,17 @@
+{
+  "name": "ReactNativeTodoApp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "build": "(cd android/ && ./gradlew assembleDebug)",
+    "bundle-android": "react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --sourcemap-output android/app/src/main/assets/index.android.map --assets-dest android/app/src/main/res/",
+    "generate-key": "keytool -genkey -v -keystore my-app-key.keystore -alias my-app-alias -keyalg RSA -keysize 2048 -validity 10000",
+    "start-debug-dev-server": "adb reverse tcp:8081 tcp:8081"
+  },
+  "dependencies": {
+    "firebase": "^3.4.1",
+    "react": "15.3.2",
+    "react-native": "0.34.1"
+  }
+}
